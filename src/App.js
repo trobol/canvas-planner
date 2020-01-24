@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import 'semantic-ui-css/semantic.min.css';
+import { Menu } from 'semantic-ui-react';
+
+import Login from './pages/Login';
+
+
 function App() {
+  const [page] = useState('login');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Menu pointing secondary>
+        <Menu.Item
+          name="home"
+        />
+        <Menu.Item
+          name="messages"
+        />
+        <Menu.Item
+          name="friends"
+        />
+        <Menu.Menu position="right">
+          <Menu.Item
+            name="logout"
+          />
+        </Menu.Menu>
+      </Menu>
+      {page === 'login'
+        && <Login />}
+
     </div>
   );
 }
