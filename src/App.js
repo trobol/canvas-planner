@@ -4,34 +4,20 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 import { Menu } from 'semantic-ui-react';
 
-import Login from './pages/Login';
+import Login from './panels/Login';
+import AssignmentsPanel from './panels/Assignments';
+
+import PanelViewer from './components/PanelViewer';
+
+const token = "3~YyVoc59O3AwC7eXrVqXmKZdC9oVZwyHQ8VKatJXOYGPZe18W1zVPeg8qKzyRMNfl";
+
+const panels = {Login:<Login/>, AssignmentsPanel: <AssignmentsPanel/>};
+  
 
 
 function App() {
-  const [page] = useState('login');
   return (
-    <div className="App">
-
-      <Menu pointing secondary>
-        <Menu.Item
-          name="home"
-        />
-        <Menu.Item
-          name="messages"
-        />
-        <Menu.Item
-          name="friends"
-        />
-        <Menu.Menu position="right">
-          <Menu.Item
-            name="logout"
-          />
-        </Menu.Menu>
-      </Menu>
-      {page === 'login'
-        && <Login />}
-
-    </div>
+      <PanelViewer panels={panels}/>
   );
 }
 
