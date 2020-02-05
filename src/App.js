@@ -20,7 +20,7 @@ const pages = {
 
 function App() {
   return (
-    <PageViewer panels={pages} />
+    <PageViewer pages={pages} />
   );
 }
 
