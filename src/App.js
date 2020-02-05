@@ -8,16 +8,16 @@ import Login from './panels/Login';
 import AssignmentsPanel from './panels/Assignments';
 
 import PanelViewer from './components/PanelViewer';
+import Calendar from './panels/Calendar';
 
-const token = "3~YyVoc59O3AwC7eXrVqXmKZdC9oVZwyHQ8VKatJXOYGPZe18W1zVPeg8qKzyRMNfl";
+const token = '3~YyVoc59O3AwC7eXrVqXmKZdC9oVZwyHQ8VKatJXOYGPZe18W1zVPeg8qKzyRMNfl';
 
-const panels = {Login:<Login/>, AssignmentsPanel: <AssignmentsPanel/>};
-  
+const panels = { Login: <Login />, AssignmentsPanel: <AssignmentsPanel />, CalendarPanel: <Calendar /> };
 
 
 function App() {
   return (
-      <PanelViewer panels={panels}/>
+    <PanelViewer panels={panels} />
   );
 }
 
