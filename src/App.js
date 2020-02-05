@@ -6,28 +6,25 @@ import {
 } from 'semantic-ui-react';
 import { Line, Scatter } from 'react-chartjs-2';
 
+import Home from './pages/Home';
+import AssignmentsPanel from './pages/Assignments';
+
+import PageViewer from './components/PageViewer';
+import Calendar from './pages/Calendar';
+
+import Charts from './pages/Charts';
+
+
+const pages = {
+  Home: <Home />,
+  AssignmentsPanel: <AssignmentsPanel />,
+  CalendarPanel: <Calendar />,
+  Charts: <Charts />
+};
 
 function App() {
-  const [page] = useState('login');
   return (
-    <div className="App">
-      <Menu pointing secondary>
-        <Menu.Item
-          name="home"
-        />
-        <Menu.Item
-          name="planner"
-        />
-        <Menu.Item
-          name="stats"
-        />
-        <Menu.Menu position="right">
-          <Menu.Item
-            name="logout"
-          />
-        </Menu.Menu>
-      </Menu>
-    </div>
+    <PageViewer panels={pages} />
   );
 }
 
