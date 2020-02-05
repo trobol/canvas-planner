@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-import { Menu } from 'semantic-ui-react';
-
-import Chart from './components/Chart';
+import {
+  Menu, CardGroup, Card, Statistic, Grid,
+} from 'semantic-ui-react';
+import { Line, Scatter } from 'react-chartjs-2';
 
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May'],
@@ -20,7 +21,7 @@ const data = {
     ],
     fill: false,
   }, {
-    label: 'My Second dataset',
+    label: 'WEB-320-01',
     fill: false,
     backgroundColor: '#ffffcc',
     borderColor: '#ffff33',
@@ -66,20 +67,20 @@ const options = {
   },
 };
 
+
 function App() {
   const [page] = useState('login');
   return (
     <div className="App">
-
       <Menu pointing secondary>
         <Menu.Item
           name="home"
         />
         <Menu.Item
-          name="messages"
+          name="planner"
         />
         <Menu.Item
-          name="friends"
+          name="stats"
         />
         <Menu.Menu position="right">
           <Menu.Item
@@ -88,7 +89,92 @@ function App() {
         </Menu.Menu>
       </Menu>
 
-      <Chart type="line" data={data} options={options} />
+      <CardGroup>
+        <Card centered>
+          <Card.Content textAlign="center">
+            <Card.Header>CSI-330-01</Card.Header>
+          </Card.Content>
+          <Card.Content textAlign="center">
+            <Card.Description>
+              <Statistic.Group>
+                <Statistic>
+                  <Statistic.Value>92</Statistic.Value>
+                  <Statistic.Label>Current Grade</Statistic.Label>
+                </Statistic>
+                <Statistic>
+                  <Statistic.Value>95</Statistic.Value>
+                  <Statistic.Label>Target Grade</Statistic.Label>
+                </Statistic>
+                <Statistic>
+                  <Statistic.Value>97</Statistic.Value>
+                  <Statistic.Label>Needed Grades</Statistic.Label>
+                </Statistic>
+              </Statistic.Group>
+
+
+            </Card.Description>
+          </Card.Content>
+        </Card>
+        <Card centered>
+          <Card.Content textAlign="center">
+            <Card.Header>WEB-320-01</Card.Header>
+          </Card.Content>
+          <Card.Content textAlign="center">
+            <Card.Description>
+              <Statistic.Group>
+                <Statistic>
+                  <Statistic.Value>85</Statistic.Value>
+                  <Statistic.Label>Grade</Statistic.Label>
+                </Statistic>
+                <Statistic>
+                  <Statistic.Value>80</Statistic.Value>
+                  <Statistic.Label>Target Grade</Statistic.Label>
+                </Statistic>
+                <Statistic>
+                  <Statistic.Value>75</Statistic.Value>
+                  <Statistic.Label>Needed Grades</Statistic.Label>
+                </Statistic>
+              </Statistic.Group>
+            </Card.Description>
+          </Card.Content>
+        </Card>
+      </CardGroup>
+      <Grid>
+        <Grid.Row columns={2}>
+          <Grid.Column>
+            <Line data={data} options={options} />
+          </Grid.Column>
+          <Grid.Column>
+            <Scatter
+              data={{
+                datasets: [{
+                  label: 'Grades',
+                  data: Array.from({ length: 40 }, () => ({
+                    x: Math.floor(Math.random() * 15) + 1,
+                    y: Math.floor(Math.random() * 40) + 60,
+                  })),
+                  backgroundColor: '#00ffcc',
+                  borderColor: '#00ff00',
+                }],
+              }}
+              options={{
+                responsive: true,
+                title: {
+                  display: true,
+                  text: 'Grades By Week',
+                },
+                scales: {
+                  xAxes: [{
+                    type: 'linear',
+                    position: 'bottom',
+                  }],
+                },
+              }}
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+
 
     </div>
   );
