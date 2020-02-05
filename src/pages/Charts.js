@@ -5,33 +5,55 @@ import {
 } from 'semantic-ui-react';
 import { Line, Scatter } from 'react-chartjs-2';
 
+const pointStyle = [
+  '#232f49',
+  '#1d2c2e',
+  '#382021',
+  '#1a2644',
+  '#2a232e',
+  '#08214e',
+  '#161a46',
+];
+
+const lineStyle = [
+  '#3743af',
+  '#1654c3',
+  '#6b5874',
+  '#4161aa',
+  '#8d5153',
+  '#4a6f75',
+  '#5976b8',
+]
+
+const datasets = [{
+  label: 'CSI-330-01',
+
+  data: [
+    100,
+    96,
+    85,
+    65,
+    81,
+  ],
+  fill: false,
+}, {
+  label: 'WEB-320-01',
+  fill: false,
+  data: [
+    100,
+    92,
+    90,
+    83,
+    85,
+  ],
+}]
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May'],
-  datasets: [{
-    label: 'CSI-330-01',
-    backgroundColor: '#00ffcc',
-    borderColor: '#00ff00',
-    data: [
-      100,
-      96,
-      85,
-      65,
-      81,
-    ],
-    fill: false,
-  }, {
-    label: 'WEB-320-01',
-    fill: false,
-    backgroundColor: '#ffffcc',
-    borderColor: '#ffff33',
-    data: [
-      100,
-      92,
-      90,
-      83,
-      85,
-    ],
-  }],
+  datasets: datasets.map((dataset, index) => ({ 
+    ...dataset,
+    backgroundColor: pointStyle[index],
+    borderColor: lineStyle[index],
+  })),
 };
 
 const options = {
@@ -68,7 +90,7 @@ const options = {
 
 const Charts = () => (
   <>
-    <CardGroup>
+    <CardGroup itemsPerRow={5}>
       <Card centered>
         <Card.Content textAlign="center">
           <Card.Header>CSI-330-01</Card.Header>
