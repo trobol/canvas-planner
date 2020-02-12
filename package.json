@@ -22,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preinstall": "git config core.hooksPath .hooks"
+    "preinstall": "git config core.hooksPath .hooks",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -42,6 +44,8 @@
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
-    "eslint-plugin-react-hooks": "^1.7.0"
-  }
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gh-pages": "^2.2.0"
+  },
+  "homepage": "https://trobol.github.io/canvas-planner"
 }
