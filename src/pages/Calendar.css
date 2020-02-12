@@ -11,3 +11,17 @@
 	position: absolute;
 	z-index: 1;
 }
+
+.label {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.row:hover .label {
+	opacity: 1;
+	transition: 0.2s;
+}
+.time {
+	float: right;
+	padding-right: 5px;
+}

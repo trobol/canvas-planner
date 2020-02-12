@@ -10,7 +10,6 @@ import {
 
 
 const pages = {
-  Home: <Home />,
   AssignmentsPanel: <AssignmentsPanel />,
   CalendarPanel: <Calendar />,
   Charts: <Charts />,

@@ -8,10 +8,11 @@ const Login = () => {
   return (
     <Modal
       open={!isLogin}
+      onClose={setLogin}
     >
       <Modal.Header>Login</Modal.Header>
       <Modal.Content>
-          This webiste does not work without a Canvas API.
+        This webiste does not work without a Canvas API.
         <Form>
           <Form.Field
             label="Access Token"
