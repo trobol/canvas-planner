@@ -23,37 +23,57 @@ const lineStyle = [
   '#8d5153',
   '#4a6f75',
   '#5976b8',
-]
+];
 
-const datasets = [{
-  label: 'CSI-330-01',
+const gradesByWeek = (length) => Array.from({ length }, () => ({
+  x: Math.floor(Math.random() * 15) + 1,
+  y: Math.floor(Math.random() * 40) + 60,
+}));
 
-  data: [
-    100,
-    96,
-    85,
-    65,
-    81,
-  ],
+const gradesByMonth = (months) => Array.from({ length: months.length }, () => Math.floor(Math.random() * 40) + 60);
+
+const months = ['January', 'February', 'March', 'April', 'May'];
+
+
+const classes = [
+  {
+    name: 'CSI-330-01',
+    gradesByWeek: gradesByWeek(15),
+    gradesByMonth: gradesByMonth(months),
+  },
+  {
+    name: 'WEB-320-01',
+    gradesByWeek: gradesByWeek(15),
+    gradesByMonth: gradesByMonth(months),
+  },
+  {
+    name: 'CSI-480-01',
+    gradesByWeek: gradesByWeek(15),
+    gradesByMonth: gradesByMonth(months),
+  },
+  {
+    name: 'CSI-300-01',
+    gradesByWeek: gradesByWeek(15),
+    gradesByMonth: gradesByMonth(months),
+  },
+  {
+    name: 'CSI-340-01',
+    gradesByWeek: gradesByWeek(15),
+    gradesByMonth: gradesByMonth(months),
+  },
+];
+
+const datasets = classes.map((c, index) => ({
+  label: c.name,
+  data: c.gradesByMonth,
   fill: false,
-}, {
-  label: 'WEB-320-01',
-  fill: false,
-  data: [
-    100,
-    92,
-    90,
-    83,
-    85,
-  ],
-}]
+  backgroundColor: pointStyle[index],
+  borderColor: lineStyle[index],
+}));
+
 const data = {
-  labels: ['January', 'February', 'March', 'April', 'May'],
-  datasets: datasets.map((dataset, index) => ({ 
-    ...dataset,
-    backgroundColor: pointStyle[index],
-    borderColor: lineStyle[index],
-  })),
+  labels: months,
+  datasets,
 };
 
 const options = {
@@ -91,54 +111,21 @@ const options = {
 const Charts = () => (
   <>
     <CardGroup itemsPerRow={5}>
-      <Card centered>
-        <Card.Content textAlign="center">
-          <Card.Header>CSI-330-01</Card.Header>
-        </Card.Content>
-        <Card.Content textAlign="center">
-          <Card.Description>
-            <Statistic.Group>
+      {classes.map((c) => (
+        <Card centered>
+          <Card.Content textAlign="center">
+            <Card.Header>{c.name}</Card.Header>
+          </Card.Content>
+          <Card.Content textAlign="center">
+            <Card.Description>
               <Statistic>
-                <Statistic.Value>92</Statistic.Value>
+                <Statistic.Value>{c.gradesByMonth[4]}</Statistic.Value>
                 <Statistic.Label>Current Grade</Statistic.Label>
               </Statistic>
-              <Statistic>
-                <Statistic.Value>95</Statistic.Value>
-                <Statistic.Label>Target Grade</Statistic.Label>
-              </Statistic>
-              <Statistic>
-                <Statistic.Value>97</Statistic.Value>
-                <Statistic.Label>Needed Grades</Statistic.Label>
-              </Statistic>
-            </Statistic.Group>
-
-
-          </Card.Description>
-        </Card.Content>
-      </Card>
-      <Card centered>
-        <Card.Content textAlign="center">
-          <Card.Header>WEB-320-01</Card.Header>
-        </Card.Content>
-        <Card.Content textAlign="center">
-          <Card.Description>
-            <Statistic.Group>
-              <Statistic>
-                <Statistic.Value>85</Statistic.Value>
-                <Statistic.Label>Grade</Statistic.Label>
-              </Statistic>
-              <Statistic>
-                <Statistic.Value>80</Statistic.Value>
-                <Statistic.Label>Target Grade</Statistic.Label>
-              </Statistic>
-              <Statistic>
-                <Statistic.Value>75</Statistic.Value>
-                <Statistic.Label>Needed Grades</Statistic.Label>
-              </Statistic>
-            </Statistic.Group>
-          </Card.Description>
-        </Card.Content>
-      </Card>
+            </Card.Description>
+          </Card.Content>
+        </Card>
+      ))}
     </CardGroup>
     <Grid>
       <Grid.Row columns={2}>
@@ -148,15 +135,12 @@ const Charts = () => (
         <Grid.Column>
           <Scatter
             data={{
-              datasets: [{
-                label: 'Grades',
-                data: Array.from({ length: 40 }, () => ({
-                  x: Math.floor(Math.random() * 15) + 1,
-                  y: Math.floor(Math.random() * 40) + 60,
-                })),
-                backgroundColor: '#00ffcc',
-                borderColor: '#00ff00',
-              }],
+              datasets: classes.map((c, index) => ({
+                label: c.name,
+                data: c.gradesByWeek,
+                backgroundColor: pointStyle[index],
+                borderColor: lineStyle[index],
+              })),
             }}
             options={{
               responsive: true,

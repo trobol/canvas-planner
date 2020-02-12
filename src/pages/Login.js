@@ -20,7 +20,7 @@ const Login = () => {
         </Form>
       </Modal.Content>
       <Modal.Actions>
-        <Button>Sumbit</Button>
+        <Button onClick={() => setLogin(!isLogin)}>Sumbit</Button>
       </Modal.Actions>
 
     </Modal>

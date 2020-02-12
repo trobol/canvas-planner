@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, Container, Segment } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 const PageViewer = ({ pages }) => {
   const [activePage, setActivePage] = useState('AssignmentsPage');
