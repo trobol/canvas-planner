@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/canvas-planner/static/css/main.08f3c137.chunk.css",
+    "main.js": "/canvas-planner/static/js/main.4c3bf827.chunk.js",
+    "main.js.map": "/canvas-planner/static/js/main.4c3bf827.chunk.js.map",
+    "runtime-main.js": "/canvas-planner/static/js/runtime-main.0e746c76.js",
+    "runtime-main.js.map": "/canvas-planner/static/js/runtime-main.0e746c76.js.map",
+    "static/css/2.aebc2106.chunk.css": "/canvas-planner/static/css/2.aebc2106.chunk.css",
+    "static/js/2.ca01fc07.chunk.js": "/canvas-planner/static/js/2.ca01fc07.chunk.js",
+    "static/js/2.ca01fc07.chunk.js.map": "/canvas-planner/static/js/2.ca01fc07.chunk.js.map",
+    "index.html": "/canvas-planner/index.html",
+    "precache-manifest.e65e36ee856291564d2d92cd8bfe753b.js": "/canvas-planner/precache-manifest.e65e36ee856291564d2d92cd8bfe753b.js",
+    "service-worker.js": "/canvas-planner/service-worker.js",
+    "static/css/2.aebc2106.chunk.css.map": "/canvas-planner/static/css/2.aebc2106.chunk.css.map",
+    "static/css/main.08f3c137.chunk.css.map": "/canvas-planner/static/css/main.08f3c137.chunk.css.map",
+    "static/js/2.ca01fc07.chunk.js.LICENSE": "/canvas-planner/static/js/2.ca01fc07.chunk.js.LICENSE",
+    "static/media/semantic.min.css": "/canvas-planner/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e746c76.js",
+    "static/css/2.aebc2106.chunk.css",
+    "static/js/2.ca01fc07.chunk.js",
+    "static/css/main.08f3c137.chunk.css",
+    "static/js/main.4c3bf827.chunk.js"
+  ]
+}
