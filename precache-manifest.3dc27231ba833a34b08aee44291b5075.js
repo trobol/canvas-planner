@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "42430750e28d096e8f6294dfa71696fc",
+    "revision": "5b2754c280e7276c280946256c6d0acd",
     "url": "/canvas-planner/index.html"
   },
   {
-    "revision": "51ec39def6fb4a10a79c",
+    "revision": "82fc9e74dbdb05b22132",
     "url": "/canvas-planner/static/css/2.aebc2106.chunk.css"
   },
   {
-    "revision": "96024d8f572f2a64ae10",
-    "url": "/canvas-planner/static/css/main.08f3c137.chunk.css"
+    "revision": "2247927aa2945d8f58d6",
+    "url": "/canvas-planner/static/css/main.7d8660cc.chunk.css"
   },
   {
-    "revision": "51ec39def6fb4a10a79c",
-    "url": "/canvas-planner/static/js/2.ca01fc07.chunk.js"
+    "revision": "82fc9e74dbdb05b22132",
+    "url": "/canvas-planner/static/js/2.259018c6.chunk.js"
   },
   {
     "revision": "94a1315a19abc6ba241cfd98b5a6c7f7",
-    "url": "/canvas-planner/static/js/2.ca01fc07.chunk.js.LICENSE"
+    "url": "/canvas-planner/static/js/2.259018c6.chunk.js.LICENSE"
   },
   {
-    "revision": "96024d8f572f2a64ae10",
-    "url": "/canvas-planner/static/js/main.4c3bf827.chunk.js"
+    "revision": "2247927aa2945d8f58d6",
+    "url": "/canvas-planner/static/js/main.297f9af5.chunk.js"
   },
   {
     "revision": "cb450fcd597823ed2bae",
